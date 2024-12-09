@@ -52,7 +52,7 @@ Sebelum melakukan pemrosesan data, kita harus mengetahui keadaan data. dengan me
 
 - Menangani outlier
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/tree/ecbd61553f9aa3b6946e071c4a0d0a45d5b25ae8/gambar/Outlier.png' width= 500/>
+<image src='https://drive.google.com/file/d/1AJijfR7X19cdyRE2LJxadIBQQcfRNA-j/view?usp=drive_link' width= 500/>
 <br>
 Jika data numerik divisualisasikan, hanya fitur *Volume* saja yang memiliki outlier. Untuk menangani outlier kita akan menggunakan IQR Method yaitu dengan menghapus data yang berada diluar IQR yaitu antara 25% dan 75%. setelah melakukan kegiatan mengatasi outlier, didapatkan sampel 4550 record dan 7 Kolom.
 
