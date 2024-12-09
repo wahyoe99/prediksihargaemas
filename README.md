@@ -51,14 +51,26 @@ Dataset yang digunakan memiliki format *.csv* yang mempunyai total 5291 record d
 Sebelum melakukan pemrosesan data, kita harus mengetahui keadaan data. dengan mencari korelasi antar fitur, mencari outlier dan melakukan analisis *univariate* dan *multivariate*.
 
 - Menangani outlier
+<br>
+<image src='https://github.com/wahyoe99/prediksihargaemas/gambar/Outlier.png' width= 500/>
+<br>
 Jika data numerik divisualisasikan, hanya fitur *Volume* saja yang memiliki outlier. Untuk menangani outlier kita akan menggunakan IQR Method yaitu dengan menghapus data yang berada diluar IQR yaitu antara 25% dan 75%. setelah melakukan kegiatan mengatasi outlier, didapatkan sampel 4550 record dan 7 Kolom.
 
 - Univariate Analysis
+<br>
+<image src='https://github.com/wahyoe99/prediksihargaemas/gambar/Univariate.png' width= 500/>
+<br>
 Pada kasus ini kita hanya akan berfokus dalam memprediksi pada kolom *Adj Close*.
 
 - Multivariate Analysis
+<br>
+<image src='https://github.com/wahyoe99/prediksihargaemas/gambar/Multivariate.png' width= 500/>
+<br>
 Selanjutnya kita akan menganalisis korelasi fitur *Adj Close* terhadap fitur lain seperti *Open, High, Low, Close dan Volume*. Dapat disimpulkan bahwa *Adj Close* memiliki korelasi positif yang kuat terhadap *Open, High, Low dan Close*, sedangkan untuk fitur *Volume* memiliki korelasi sedang terhadap fitur *Adj Close*.
 
+<br>
+<image src='https://github.com/wahyoe99/prediksihargaemas/gambar/korelasi.png' width= 500/>
+<br>
 Untuk memperjelas korelasi kita akan memvisualisasikannya menggunakan heatmap dari library Seaborn. Dapat kita lihat bahwa *Adj Close* memiliki korelasi positif tinggi pada setiap fitur, kecuali fitur *Volume* sehingga kita dapat menggunakan semua fitur sebagai *dependant variable*.
 
     
