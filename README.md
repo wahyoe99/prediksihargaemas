@@ -52,13 +52,13 @@ Sebelum melakukan pemrosesan data, kita harus mengetahui keadaan data. dengan me
 
 - Menangani outlier
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/tree/ecbd61553f9aa3b6946e071c4a0d0a45d5b25ae8/gambar/outlier.png' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/0ecae980a236cd1f2aa31026f81a43329bd99dbc/gambar/outlier.png' width= 500/>
 <br>
 Jika data numerik divisualisasikan, hanya fitur *Volume* saja yang memiliki outlier. Untuk menangani outlier kita akan menggunakan IQR Method yaitu dengan menghapus data yang berada diluar IQR yaitu antara 25% dan 75%. setelah melakukan kegiatan mengatasi outlier, didapatkan sampel 4550 record dan 7 Kolom.
 
 - Univariate Analysis
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/tree/ecbd61553f9aa3b6946e071c4a0d0a45d5b25ae8/gambar/Univariate.png' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/fe24d908a8d8254040603d167594f2e4b01c42be/gambar/Univariate.png' width= 500/>
 <br>
 Pada kasus ini kita hanya akan berfokus dalam memprediksi pada kolom *Adj Close*.
 
@@ -69,7 +69,8 @@ Pada kasus ini kita hanya akan berfokus dalam memprediksi pada kolom *Adj Close*
 Selanjutnya kita akan menganalisis korelasi fitur *Adj Close* terhadap fitur lain seperti *Open, High, Low, Close dan Volume*. Dapat disimpulkan bahwa *Adj Close* memiliki korelasi positif yang kuat terhadap *Open, High, Low dan Close*, sedangkan untuk fitur *Volume* memiliki korelasi sedang terhadap fitur *Adj Close*.
 
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/tree/ecbd61553f9aa3b6946e071c4a0d0a45d5b25ae8/gambar/korelasi.png' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/0ecae980a236cd1f2aa31026f81a43329bd99dbc/gambar/korelasi.png
+' width= 500/>
 <br>
 Untuk memperjelas korelasi kita akan memvisualisasikannya menggunakan heatmap dari library Seaborn. Dapat kita lihat bahwa *Adj Close* memiliki korelasi positif tinggi pada setiap fitur, kecuali fitur *Volume* sehingga kita dapat menggunakan semua fitur sebagai *dependant variable*.
 
