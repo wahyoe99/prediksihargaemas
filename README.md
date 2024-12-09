@@ -64,13 +64,13 @@ Pada kasus ini kita hanya akan berfokus dalam memprediksi pada kolom *Adj Close*
 
 - Multivariate Analysis
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/tree/ecbd61553f9aa3b6946e071c4a0d0a45d5b25ae8/gambar/Multivariate.png' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/bd63205de20704301bd407fc2d1c62e9430d4f5d/gambar/Multivariate.png' width= 500/>
 <br>
 Selanjutnya kita akan menganalisis korelasi fitur *Adj Close* terhadap fitur lain seperti *Open, High, Low, Close dan Volume*. Dapat disimpulkan bahwa *Adj Close* memiliki korelasi positif yang kuat terhadap *Open, High, Low dan Close*, sedangkan untuk fitur *Volume* memiliki korelasi sedang terhadap fitur *Adj Close*.
 
+- Korelasi
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/0ecae980a236cd1f2aa31026f81a43329bd99dbc/gambar/korelasi.png
-' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/bd63205de20704301bd407fc2d1c62e9430d4f5d/gambar/korelasi.png' width= 500/>
 <br>
 Untuk memperjelas korelasi kita akan memvisualisasikannya menggunakan heatmap dari library Seaborn. Dapat kita lihat bahwa *Adj Close* memiliki korelasi positif tinggi pada setiap fitur, kecuali fitur *Volume* sehingga kita dapat menggunakan semua fitur sebagai *dependant variable*.
 
