@@ -168,3 +168,4 @@ Dari hasil perbandingan dengan menggunakan 3 model diatas didapatkan hasil yang 
 * Dapat menganalisa prediksi data harga *Emas* dengan menggunakan model KNN
 * Tujuannya mencari model terbaik yang bisa digunakan untuk melakukan prediksi harga *Emas*
 * Dan juga dapat membantu *trader* untuk dapat mengambil keputusan dalam melakukan pembelian pada *Emas*
+* Solusi yang sudah dilakukan dari mulai prepare data sampai normalisasi dan membuat model regresi sampai membandingkan 3 algoritma yang digunakan untuk bisa mendapatkan akurasi yang terbaik
