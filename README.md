@@ -77,12 +77,12 @@ Untuk memperjelas korelasi kita akan memvisualisasikannya menggunakan heatmap da
 Berikut merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data:
 ### Melakukan Penanganan Missing Value
 Dalam menangani Missing Value menggunakan library SimpleImputer, yang dimana library ini bertugas untuk mengisi kolom yang memiliki missing value dengan data mean
+   
+### Menghapus fitur yang tidak diperlukan
+Karena kita tidak memerlukan kolom *Date* dan *Volume* kita akan menghapus fitur *Date* dan *Volume*. Juga kita tidak memerlukan fitur *Close* karena *Adj Close* lebih akurat dari pada *Close*
 
 ### Melakukan pembagian dataset
 Dataset akan dibagi menjadi 2 yaitu sebagai train data dan test data. Train data digunakan sebagai training model dan test data digunakan sebagai validasi apakah model sudah akurat atau belum. Ratio yang umum dalam splitting dataset adalah 80:20, 80% sebagai train data dan 20% sebagai test data. Pembagian dataset dilakukan dengan modul train_test_split dari scikit-learn. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data latih sebanyak 3640 sampel dan jumlah sample pada data test yaitu 910 sampel dari total jumlah sample pada dataset yaitu 4550 sampel.
-    
-### Menghapus fitur yang tidak diperlukan
-Karena kita tidak memerlukan kolom *Date* dan *Volume* kita akan menghapus fitur *Date* dan *Volume*. Juga kita tidak memerlukan fitur *Close* karena *Adj Close* lebih akurat dari pada *Close*
 
 ### Data Normalization
 Normalisasi data digunakan agar model dapat bekerja lebih optimal karena model tidak perlu mengolah data dengan angka besar. Normalisasi biasanya mentransformasi data dalam skala tertentu. Untuk proyek ini kita akan normalisasi data 0 hingga 1 menggunakan MinMaxScaler.
@@ -135,9 +135,12 @@ Gradient Boosting adalah algoritma machine learning yang menggunakan teknik *ens
 
 Untuk proyek kali ini kita akan menggunakan model *K-Nearest Neighbors* karena memiliki error (*0.00001*) yang paling sedikit daripada model yang lain. Namun tidak bisa dipungkiri model dari Gradient Boosting juga memiliki error (*0.000011*) yang hampir seperti *KNN*.
 
+
+
+
 ## Evaluation
 
-Untuk evaluasi pada machine learning model ini, metrik yang digunakan adalah *mean squared error (mse)*. Dimana metrik ini mengukur seberapa dekat garis pas dengan titik data.
+Untuk evaluasi pada machine learning model ini, metrik yang digunakan adalah *mean squared error (mse)* dan R2 _coefficient of determination_ . Dimana metrik ini mengukur seberapa dekat garis pas dengan titik data.
 
 ![](https://www.gstatic.com/education/formulas2/443397389/en/mean_squared_error.svg)
 
@@ -145,6 +148,8 @@ dimana :
 n = jumlah titik data
 Yi = nilai sesungguhnya
 Yi_hat = nilai prediksi
+
+![](https://cdn1.byjus.com/wp-content/uploads/2021/04/Correlation-formula.png)
 
 Menampilkan hasil akurasi dari beberapa model yang dipakai :
 <br>
