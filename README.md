@@ -11,7 +11,6 @@ Forex termasuk investasi beresiko tinggi karena transaksi yang kurang tepat dapa
 ### Problem Statement
 Berdasarkan pada latar belakang di atas, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
 * Bagaimana menganalisa data harga *Emas*?
-* Bagaimana cara membangun model yang dapat memprediksi *time series forecasting* dengan baik?
 
 ### Goals
 Tujuan proyek ini dibuat antara lain sebagai berikut :
@@ -25,13 +24,11 @@ Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
 * Mencari korelasi pada data untuk mencari *dependant variable* dan *independent variable*.
 * Menangani outlier pada data dengan menggunakan Metode IQR.
 * Melakukan normalisasi pada data terutama pada fitur numerik.
-* Membuat model regresi untuk memprediksi bilangan kontinu untuk memprediksi harga yang akan datang. 
-    
-* Berikut  algoritma yang digunakan pada proyek ini :
+* Membuat model regresi untuk memprediksi bilangan kontinu untuk memprediksi harga yang akan datang.     
+* Algoritma yang digunakan pada proyek ini :
     * Support Vector Machine (Support Vector Regression)
     * K-Nearest Neighbors
-    * Boosting Algorithm (Gradient Boosting Regression)
-    
+    * Boosting Algorithm (Gradient Boosting Regression)    
 * Melakukan hyperparameter tuning agar model dapat berjalan pada performa terbaik dengan menggunakan teknik Grid Search
 
 ## Data Understanding
@@ -75,7 +72,7 @@ Selanjutnya kita akan menganalisis korelasi fitur *Adj Close* terhadap fitur lai
 Untuk memperjelas korelasi kita akan memvisualisasikannya menggunakan heatmap dari library Seaborn. Dapat kita lihat bahwa *Adj Close* memiliki korelasi positif tinggi pada setiap fitur, kecuali fitur *Volume* sehingga kita dapat menggunakan semua fitur sebagai *dependant variable*.
 
     
-# Data Preparation
+## Data Preparation
 
 Berikut merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data:
 ### Melakukan Penanganan Missing Value
@@ -90,7 +87,7 @@ Karena kita tidak memerlukan kolom *Date* dan *Volume* kita akan menghapus fitur
 ### Data Normalization
 Normalisasi data digunakan agar model dapat bekerja lebih optimal karena model tidak perlu mengolah data dengan angka besar. Normalisasi biasanya mentransformasi data dalam skala tertentu. Untuk proyek ini kita akan normalisasi data 0 hingga 1 menggunakan MinMaxScaler.
 
-# Modeling
+## Modeling
 
 Model yang akan digunakan proyek kali ini yaitu *Support Vector Regression, Gradient Boosting,* dan *K-Nearest Neighbors*.
 
@@ -138,7 +135,7 @@ Gradient Boosting adalah algoritma machine learning yang menggunakan teknik *ens
 
 Untuk proyek kali ini kita akan menggunakan model *K-Nearest Neighbors* karena memiliki error (*0.00001*) yang paling sedikit daripada model yang lain. Namun tidak bisa dipungkiri model dari Gradient Boosting juga memiliki error (*0.000011*) yang hampir seperti *KNN*.
 
-# Evaluation
+## Evaluation
 
 Untuk evaluasi pada machine learning model ini, metrik yang digunakan adalah *mean squared error (mse)*. Dimana metrik ini mengukur seberapa dekat garis pas dengan titik data.
 
