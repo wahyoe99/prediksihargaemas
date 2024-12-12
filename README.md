@@ -153,10 +153,10 @@ Yi_hat = nilai prediksi
 
 Menampilkan hasil akurasi dari beberapa model yang dipakai :
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/0ecae980a236cd1f2aa31026f81a43329bd99dbc/gambar/modeling.png' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/modeling.png' width= 400/>
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/0ecae980a236cd1f2aa31026f81a43329bd99dbc/gambar/hasilmse.png' width= 400/>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/0ecae980a236cd1f2aa31026f81a43329bd99dbc/gambar/hasilr2.png' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilmse.png' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilr2.png' width= 400/>
 <br>
 Untuk proyek kali ini terdapat 2 model yang dapat berjalan dengan performa optimal yaitu, *Gradient Boosting* model dan *K-Nearest Neighbors*. Terdapat selisih nilai yang sangat kecil. Tetapi pada perhitungan akurasi model terdapat model yang menggunakan *K-Nearest Neighbors* memiliki nilai lebih tinggi.
 
