@@ -14,8 +14,7 @@ Berdasarkan pada latar belakang di atas, permasalahan yang dapat diselesaikan pa
 
 ### Goals
 Tujuan proyek ini dibuat antara lain sebagai berikut :
-* Dapat memprediksi harga *Emas* dengan menggunakan model machine learning.
-* Melakukan analisa dan mengolah data yang optimal agar model dapat Membantu para *trader* dalam melakukan pembelian pada *Emas*.
+* Dapat memprediksi harga *Emas* dengan menggunakan model machine learning agar dapat Membantu *trader* dalam melakukan pembelian pada *Emas*.
 
 ### Solution Statement
 Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
@@ -75,6 +74,13 @@ Untuk memperjelas korelasi kita akan memvisualisasikannya menggunakan heatmap da
 ## Data Preparation
 
 Berikut merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data:
+
+### Menampilkan semua data dan kolom
+Menampilkan semua data dan kolom dari dataset yang sudah di load
+
+### Mengubah kolom date dari tipe object menjadi datatime
+Melakukan perubahan tipe data object menjadi datetime agar datanya dapat diolah lebih mudah jika memang datanya berisi tanggal. seperti melakukan perhitungan selisih hari, bulan dan tahun.
+
 ### Melakukan Penanganan Missing Value
 Dalam menangani Missing Value menggunakan library SimpleImputer, yang dimana library ini bertugas untuk mengisi kolom yang memiliki missing value dengan data mean
    
