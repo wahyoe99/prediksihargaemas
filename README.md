@@ -147,8 +147,9 @@ Untuk proyek kali ini kita akan menggunakan model *K-Nearest Neighbors* karena m
 ## Evaluation
 
 Untuk evaluasi pada machine learning model ini, metrik yang digunakan adalah *mean squared error (mse)* dan R2 _coefficient of determination_ . Dimana metrik ini mengukur seberapa dekat garis pas dengan titik data.
-
-![](https://www.gstatic.com/education/formulas2/443397389/en/mean_squared_error.svg)
+<br>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/bd63205de20704301bd407fc2d1c62e9430d4f5d/gambar/mse.jpg' width= 500/>
+<br>
 
 dimana :
 n = jumlah titik data
