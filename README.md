@@ -160,7 +160,7 @@ Yi_hat = nilai prediksi
 
 Menampilkan hasil akurasi dari beberapa model yang dipakai :
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/modeling.png' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/37a481af9bad01fb7b311173db1a789b41584593/gambar/modeling.png' width= 400/>
 <br>
 <image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilmse.png' width= 400/>
 <image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilr2.png' width= 400/>
