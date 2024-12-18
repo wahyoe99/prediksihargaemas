@@ -24,8 +24,7 @@ Berdasarkan pada latar belakang di atas, permasalahan yang dapat diselesaikan pa
 
 ### Goals
 Tujuan proyek ini dibuat antara lain sebagai berikut :
-* Dapat memprediksi harga *Emas* dengan menggunakan model machine learning.
-* Melakukan analisa dan mengolah data yang optimal agar model dapat Membantu para *trader* dalam melakukan pembelian pada *Emas*.
+* Dapat memprediksi harga *Emas* dengan menggunakan model machine learning agar dapat Membantu *trader* dalam melakukan pembelian pada *Emas*.
 
 ### Solution Statement
 Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
@@ -122,6 +121,12 @@ df.describe()
 ---
 
 Berikut merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data:
+### Menampilkan semua data dan kolom
+Menampilkan semua data dan kolom dari dataset yang sudah di load
+
+### Mengubah kolom date dari tipe object menjadi datatime
+Melakukan perubahan tipe data object menjadi datetime agar datanya dapat diolah lebih mudah jika memang datanya berisi tanggal. seperti melakukan perhitungan selisih hari, bulan dan tahun.
+
 ### Melakukan Penanganan Missing Value
 Dalam menangani Missing Value menggunakan library SimpleImputer, yang dimana library ini bertugas untuk mengisi kolom yang memiliki missing value dengan data mean
 
@@ -280,8 +285,9 @@ def grid_search(model, hyperparameters):
       model,        # Model machine learning yang ingin dioptimalkan.
       hyperparameters,
       cv=5,         # Jumlah fold untuk cross-validation
+      scoring='r2',  # Metric evaluasi
       verbose=1,    # Tingkat kecerahan output
-      n_jobs=6      # Jumlah prosesor yang digunakan untuk komputasi
+      n_jobs=-1     # Gunakan semua core CPU
   )
 
   return results
@@ -290,9 +296,10 @@ def grid_search(model, hyperparameters):
 
 svr = SVR()
 hyperparameters = {
-    'kernel': ['rbf'],
-    'C': [0.001, 0.01, 0.1, 10, 100, 1000],
-    'gamma': [0.3, 0.03, 0.003, 0.0003]
+    'kernel': ['linear', 'rbf', 'poly'],        # Jenis kernel
+    'C': [0.001, 0.01, 0.1, 10, 100, 1000],  # Regularisasi
+    'gamma': [0.3, 0.03, 0.003, 0.0003],  # Kernel coefficient
+    'epsilon': [0.1, 0.2, 0.5]  # Margin error
 }
 
 svr_search = grid_search(svr, hyperparameters)
@@ -300,23 +307,48 @@ svr_search.fit(X_train, y_train)
 
 gradient_boost = GradientBoostingRegressor()
 hyperparameters = {
-    'learning_rate': [0.01, 0.001, 0.0001],
-    'n_estimators': [250, 500, 750, 1000],
+    'learning_rate': [0.01, 0.001, 0.0001],       # Tingkat pembelajaran
+    'n_estimators': [250, 500, 750, 1000],        # Jumlah pohon
     'criterion': ['friedman_mse', 'squared_error']
 }
+
 
 gradient_boost_search = grid_search(gradient_boost, hyperparameters)
 gradient_boost_search.fit(X_train, y_train)
 
 knn = KNeighborsRegressor()
 hyperparameters = {
-    'n_neighbors': range(1, 10)
+    'n_neighbors': range(1, 11),         # Jumlah tetangga
+    'weights': ['uniform', 'distance'],  # Bobot jarak
+    'metric': ['euclidean', 'manhattan', 'minkowski'],  # Jenis metrik jarak
+    'p': [1, 2]  # Parameter untuk metrik Minkowski (1=Manhattan, 2=Euclidean)
 }
+
 
 knn_search = grid_search(knn, hyperparameters)
 knn_search.fit(X_train, y_train)
 
-"""# **Model Training**"""
+"""**Ringkasan Kombinasi Parameter Terbaik**
+
+Model---------------------------Parameter Terbaik
+
+SVR-----------------------------C=1000, epsilon=0.2, gamma=0.3, kernel='linear'
+
+Gradient Boosting-------learning_rate=0.01, n_estimators=1000
+
+KNN---------------------------metric='euclidean', p=1, weights='distance'
+
+# **Model Training**
+"""
+
+svr = SVR(C=1000, gamma=0.3, epsilon=0.2, kernel='linear')
+svr.fit(X_train, y_train)
+
+gradient_boost = GradientBoostingRegressor(learning_rate=0.01, n_estimators=1000)
+gradient_boost.fit(X_train, y_train)
+
+knn = KNeighborsRegressor(metric='euclidean', p=1, weights='distance')
+knn.fit(X_train, y_train)
 
 # Cetak hasil SVR model
 print("Best Parameters: ", svr_search.best_params_)
@@ -330,20 +362,10 @@ print("Best Score: ", gradient_boost_search.best_score_)
 print("Best Parameters: ", knn_search.best_params_)
 print("Best Score: ", knn_search.best_score_)
 
-svr = SVR(C=10, gamma=0.3, kernel='rbf')
-svr.fit(X_train, y_train)
-
-gradient_boost = GradientBoostingRegressor(criterion='squared_error', learning_rate=0.01, n_estimators=1000)
-gradient_boost.fit(X_train, y_train)
-
-knn = KNeighborsRegressor(n_neighbors=9)
-knn.fit(X_train, y_train)
-
 """# **Model Evaluation**
 
-Membuat dictionary yang berisi 3 nama model yang sudah kita buat permodelannya diatas, lalu dengan pengulangan digunakan untuk menghitung Mean Squared Error (MSE) untuk setiap modelnya.
-Hasilnya dapat dilihat bahwa GradientBoosting memiliki nilai MSE yang lebih kecil dibandingkan dengan SVR dan KNN, yang menunjukkan bahwa model lebih akurat.
-Lalu untuk lebih jelaskan kita bisa visualisasikan dengan bentuk graph
+Membuat dictionary yang berisi 3 nama model yang sudah kita buat permodelannya diatas, dengan melakukan pengulangan untuk dapat menghitung Mean Squared Error (MSE)  setiap modelnya.
+Lalu kita visualisasikan dengan bentuk graph
 """
 
 model_dict = {
@@ -394,8 +416,8 @@ results_df = pd.DataFrame(results)
 # Menampilkan tabel hasil
 print(results_df)
 
-"""Dari hasil evaluasi di atas dengan menggunakan MSE dan R2 atau coefficient of determination dapat memberikan informasi bahwa ketiga model yang dibangun memiliki performa di atas 99% mendekati 100%. Dimana dapat dilihat juga bahwa model dengan algoritma KNN memiliki performa yang diukur dengan nilai akurasi yang lebih baik dari dua model lainnya yaitu model dengan algoritma SVR dan Gradient Boost.
-Sehingga untuk dapat memprediksi harga emas selama 30 hari kedepan bisa menggunakan algoritma KNN karena secara akurasinya hampir mendekati sempurna 100%
+"""Dari hasil evaluasi di atas dengan menggunakan MSE dan R2 atau coefficient of determination dapat memberikan informasi bahwa ketiga model yang dibangun memiliki performa di atas 99% mendekati 100%. Dimana dapat dilihat juga bahwa model dengan algoritma SVR memiliki performa yang diukur dengan nilai akurasi yang lebih baik dari dua model lainnya yaitu model dengan algoritma KNN dan Gradient Boost.
+Sehingga untuk dapat memprediksi harga emas selama 30 hari kedepan kita  menggunakan algoritma SVR karena secara akurasinya hampir mendekati sempurna 100%
 """
 
 X_30=X[-30:]
