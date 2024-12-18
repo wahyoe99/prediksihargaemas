@@ -162,7 +162,7 @@ Menampilkan hasil akurasi dari beberapa model yang dipakai :
 <br>
 <image src='https://github.com/wahyoe99/prediksihargaemas/blob/37a481af9bad01fb7b311173db1a789b41584593/gambar/modeling.png' width= 400/>
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilmse.png' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/41e45fe702ef11e0f00022b2375cbd6813479a4f/gambar/hasilmse.png' width= 400/>
 <image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilr2.png' width= 400/>
 <br>
 Untuk proyek kali ini terdapat 2 model yang dapat berjalan dengan performa optimal yaitu, *Gradient Boosting* model dan *K-Nearest Neighbors*. Terdapat selisih nilai yang sangat kecil. Tetapi pada perhitungan akurasi model terdapat model yang menggunakan *K-Nearest Neighbors* memiliki nilai lebih tinggi.
