@@ -165,14 +165,13 @@ Menampilkan hasil akurasi dari beberapa model yang dipakai :
 <image src='https://github.com/wahyoe99/prediksihargaemas/blob/41e45fe702ef11e0f00022b2375cbd6813479a4f/gambar/hasilmse.png' width= 400/>
 <image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilr2.png' width= 400/>
 <br>
-Untuk proyek kali ini terdapat 2 model yang dapat berjalan dengan performa optimal yaitu, *Gradient Boosting* model dan *K-Nearest Neighbors*. Terdapat selisih nilai yang sangat kecil. Tetapi pada perhitungan akurasi model terdapat model yang menggunakan *K-Nearest Neighbors* memiliki nilai lebih tinggi.
+Untuk proyek kali ini terdapat 1 model yang dapat berjalan dengan performa optimal yaitu *SVR* model, juga pada perhitungan akurasi model memiliki nilai akurasi yang lebih tinggi.
 
 ## Kesimpulan
 
-Dari hasil evaluasi di atas dengan menggunakan MSE dan R2 atau coefficient of determination dapat memberikan informasi bahwa ketiga model yang dibangun memiliki performa di atas 99% mendekati 100%. Dimana dapat dilihat juga bahwa model dengan algoritma KNN memiliki performa yang diukur dengan nilai akurasi yang lebih baik dari dua model lainnya yaitu model dengan algoritma SVR dan Gradient Boost. Sehingga untuk dapat memprediksi harga emas selama 30 hari kedepan bisa menggunakan algoritma KNN karena secara akurasinya hampir mendekati sempurna 100%
+Dari hasil evaluasi di atas dengan menggunakan MSE dan R2 atau coefficient of determination dapat memberikan informasi bahwa ketiga model yang dibangun memiliki performa di atas 99% mendekati 100%. Dimana dapat dilihat juga bahwa model dengan algoritma SVR memiliki performa yang diukur dengan nilai akurasi yang lebih baik dari dua model lainnya yaitu model dengan algoritma KNN dan Gradient Boost. Sehingga untuk dapat memprediksi harga emas selama 30 hari kedepan bisa menggunakan algoritma SVR karena secara akurasinya hampir mendekati sempurna 100%
 
-Dari hasil perbandingan dengan menggunakan 3 model diatas didapatkan hasil yang terbaik untuk bisa melakukan analisa prediksi harga emas dengan menggunakan KNN karena dari evaluasinya akurasinya paling tinggi hampir mendekati angka 100%, dan bisa menjawab beberapa pertanyaan di Business Understanding
-* Dapat menganalisa prediksi data harga *Emas* dengan menggunakan model KNN
-* Tujuannya mencari model terbaik yang bisa digunakan untuk melakukan prediksi harga *Emas*
-* Dan juga dapat membantu *trader* untuk dapat mengambil keputusan dalam melakukan pembelian pada *Emas*
+Dari hasil perbandingan dengan menggunakan 3 model diatas didapatkan hasil yang terbaik untuk bisa melakukan analisa prediksi harga emas dengan menggunakan SVR karena dari evaluasinya akurasinya paling tinggi hampir mendekati angka 100%, dan bisa menjawab beberapa pertanyaan di Business Understanding
+* Model SVR dapat digunakan untuk menganalisa prediksi data harga *Emas* yang lebih baik
+* Tujuannya untuk mencari model terbaik yang bisa digunakan untuk melakukan prediksi harga *Emas* sehingga dapat membantu *trader* untuk dapat mengambil keputusan dalam melakukan pembelian *Emas*
 * Solusi yang sudah dilakukan dari mulai prepare data sampai normalisasi dan membuat model regresi sampai membandingkan 3 algoritma yang digunakan untuk bisa mendapatkan akurasi yang terbaik
