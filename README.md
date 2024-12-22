@@ -10,7 +10,7 @@ Forex termasuk investasi beresiko tinggi karena transaksi yang kurang tepat dapa
 
 ### Problem Statement
 Berdasarkan pada latar belakang di atas, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
-* Bagaimana menganalisa data harga *Emas*?
+* Bagaimana memprediksi data harga *Emas*?
 
 ### Goals
 Tujuan proyek ini dibuat antara lain sebagai berikut :
@@ -141,8 +141,13 @@ Gradient Boosting adalah algoritma machine learning yang menggunakan teknik *ens
 
 Untuk proyek kali ini kita akan menggunakan model *K-Nearest Neighbors* karena memiliki error (*0.00001*) yang paling sedikit daripada model yang lain. Namun tidak bisa dipungkiri model dari Gradient Boosting juga memiliki error (*0.000011*) yang hampir seperti *KNN*.
 
-
-
+**Ringkasan Kombinasi Parameter Terbaik**
+|       Model       |                     Parameter                    |
+| ----------------- | ------------------------------------------------ |
+| SVR               | C=1000, epsilon=0.2, gamma=0.3, kernel='linear'  |
+| Gradient Boosting | learning_rate=0.01, n_estimators=1000            |
+| KNN               | metric='euclidean', p=1, weights='distance'      |
+------------------------------------------------------------------------
 
 ## Evaluation
 
