@@ -54,19 +54,19 @@ Jika data numerik divisualisasikan, hanya fitur *Volume* saja yang memiliki outl
 
 - Univariate Analysis
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/fe24d908a8d8254040603d167594f2e4b01c42be/gambar/Univariate.png' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/fe24d908a8d8254040603d167594f2e4b01c42be/gambar/Univariate.png?raw=true' width= 500/>
 <br>
 Pada kasus ini kita hanya akan berfokus dalam memprediksi pada kolom *Adj Close*.
 
 - Multivariate Analysis
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/bd63205de20704301bd407fc2d1c62e9430d4f5d/gambar/Multivariate.png' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/bd63205de20704301bd407fc2d1c62e9430d4f5d/gambar/Multivariate.png?raw=true' width= 500/>
 <br>
 Selanjutnya kita akan menganalisis korelasi fitur *Adj Close* terhadap fitur lain seperti *Open, High, Low, Close dan Volume*. Dapat disimpulkan bahwa *Adj Close* memiliki korelasi positif yang kuat terhadap *Open, High, Low dan Close*, sedangkan untuk fitur *Volume* memiliki korelasi sedang terhadap fitur *Adj Close*.
 
 - Korelasi
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/bd63205de20704301bd407fc2d1c62e9430d4f5d/gambar/korelasi.png' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/bd63205de20704301bd407fc2d1c62e9430d4f5d/gambar/korelasi.png?raw=true' width= 500/>
 <br>
 Untuk memperjelas korelasi kita akan memvisualisasikannya menggunakan heatmap dari library Seaborn. Dapat kita lihat bahwa *Adj Close* memiliki korelasi positif tinggi pada setiap fitur, kecuali fitur *Volume* sehingga kita dapat menggunakan semua fitur sebagai *dependant variable*.
 
@@ -153,7 +153,7 @@ Untuk proyek kali ini kita akan menggunakan model *K-Nearest Neighbors* karena m
 
 Untuk evaluasi pada machine learning model ini, metrik yang digunakan adalah *mean squared error (mse)* dan R2 _coefficient of determination_ . Dimana metrik ini mengukur seberapa dekat garis pas dengan titik data.
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/9bf65c47f22227c4e976784dfba353be93aef28e/gambar/mse.jpg' width= 500/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/9bf65c47f22227c4e976784dfba353be93aef28e/gambar/mse.jpg?raw=true' width= 500/>
 <br>
 
 dimana :
@@ -165,10 +165,10 @@ Yi_hat = nilai prediksi
 
 Menampilkan hasil akurasi dari beberapa model yang dipakai :
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/37a481af9bad01fb7b311173db1a789b41584593/gambar/modeling.png' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/37a481af9bad01fb7b311173db1a789b41584593/gambar/modeling.png?raw=true' width= 400/>
 <br>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/41e45fe702ef11e0f00022b2375cbd6813479a4f/gambar/hasilmse.png' width= 400/>
-<image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilr2.png' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/41e45fe702ef11e0f00022b2375cbd6813479a4f/gambar/hasilmse.png?raw=true' width= 400/>
+<image src='https://github.com/wahyoe99/prediksihargaemas/blob/415c4d3c6e4f7ee45e88b5fb7d37d7a9c17291c0/gambar/hasilr2.png?raw=true' width= 400/>
 <br>
 Untuk proyek kali ini terdapat 1 model yang dapat berjalan dengan performa optimal yaitu *SVR* model, juga pada perhitungan akurasi model memiliki nilai akurasi yang lebih tinggi.
 
